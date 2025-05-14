@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <title>Multiplikation</title>
+    <style>
+        /* Hintergrundfarbe */
+        body {
+
+            background-color: #f0f8ff; /* Hellblau */
+            color: black; /* Schwarze Schrift */
+            font-family: Arial, sans-serif; /* Einfach lesbare Schrift */
+            text-align: center; /* Text wird in der Mitte angezeigt */
+            padding-top: 50px; /* Abstand nach oben */
+        }
+
+        /* Eingabefelder und Knopf */
+        input, button {
+            margin: 10px;
+            padding: 10px;
+            font-size: 16px;
+        }
+
+        /* Anzeige des Ergebnisses */
+        #output {
+            margin-top: 20px;
+            font-size: 20px;
+            font-weight: bold;
+        }
+    </style>
+    <script>
+        // Funktion, die die Zahlen miteinander multipliziert
+        function multiplizieren() {
+            // Die Zahlen aus den Feldern holen
+            let zahl1 = document.getElementById("zahl1").value;
+            let zahl2 = document.getElementById("zahl2").value;
+
+            // Wenn beide Felder ausgefüllt sind
+            if (zahl1 !== "" && zahl2 !== "") {
+                // Die Multiplikation durchführen
+                let ergebnis = Number(zahl1) * Number(zahl2);
+                // Das Ergebnis anzeigen
+                document.getElementById("output").innerHTML = "Ergebnis: " + ergebnis;
+            } else {
+                // Wenn eines der Felder leer ist, passiert nichts
+                document.getElementById("output").innerHTML = "";
+            }
+        }
+    </script>
+</head>
+<body>
+
+    <h2>Multipliziere zwei Zahlen</h2>
+
+    <!-- Eingabefelder für die Zahlen -->
+    <input type="number" id="zahl1" placeholder="Zahl 1">
+    <input type="number" id="zahl2" placeholder="Zahl 2">
+
+    <!-- Knopf, der die Multiplikation startet -->
+    <button onclick="multiplizieren()">Multiplizieren</button>
+
+    <!-- Bereich, in dem das Ergebnis angezeigt wird -->
+    <p id="output"></p>
+
+</body>
+</html>
